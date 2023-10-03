@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="coffee shop" />
+    <link rel="icon" href="./public/Vector.svg" />
+    <title>Coffee Shop - Product</title>
+    <link rel="stylesheet" href="./product.css" />
+  </head>
+
+  <body>
+    <header>
+      <section class="left-head">
+        <section class="coffee-logo">
+          <img src="./assets/images/coffee-logo-white.svg" alt="coffee-shop-logo" />
+          <h1>Coffee Shop</h1>
+        </section>
+        <nav class="left-nav">
+          <p>Home</p>
+          <p class="active">Product</p>
+        </nav>
+      </section>
+      <img class="hamburger" src="./assets/images/hamburger-menu.svg" alt="hamburger" />
+      <nav class="right-nav">
+        <img src="./assets/images/Search.svg" alt="seacrh" />
+        <img src="./assets/images/ShoppingCart -white.svg" alt="shopping-cart" />
+        <a href="./login.html">
+          <button class="signin">SignIn</button>
+        </a>
+        <button class="signup">Sign Up</button>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <h1>We Provide Good Coffee and Healthy Meals</h1>
+      </section>
+
+      <section class="promo">
+        <section class="promo-head">
+          <h2>Today <span>Promo</span></h2>
+          <section class="page-nav">
+            <div class="back"></div>
+            <div class="next"></div>
+          </section>
+        </section>
+        <section class="promo-cont">
+          <section class="card">
+            <img src="./assets/images/promo-1.png" alt="promo-1" />
+            <section class="card-text">
+              <p class="card-name">Happy Mother's Day!</p>
+              <p class="card-desc">Get one of our favorite menu for free</p>
+              <p class="claim">Klaim Kupon</p>
+            </section>
+          </section>
+          <section class="card">
+            <img src="./assets/images/promo-1.png" alt="promo-1" />
+            <section class="card-text">
+              <p class="card-name">Happy Mother's Day!</p>
+              <p class="card-desc">Get one of our favorite menu for free</p>
+              <p class="claim">Klaim Kupon</p>
+            </section>
+          </section>
+          <section class="card">
+            <img src="./assets/images/promo-1.png" alt="promo-1" />
+            <section class="card-text">
+              <p class="card-name">Happy Mother's Day!</p>
+              <p class="card-desc">Get one of our favorite menu for free</p>
+              <p class="claim">Klaim Kupon</p>
+            </section>
+          </section>
+          <section class="card">
+            <img src="./assets/images/promo-2.png" alt="promo-2" />
+            <section class="card-text">
+              <p class="card-name">
+                Get a cup of coffee for free <br />
+                on sunday morning
+              </p>
+              <p class="card-desc">Only at 7 to 9 AM</p>
+              <!-- <p class="claim">Klaim Kupon</p> -->
+            </section>
+          </section>
+        </section>
+        <section class="page">
+          <div class="active"></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </section>
+      </section>
+
+      <section class="product-cont">
+        <section class="product-head">
+          <h2>Our <span>Product</span></h2>
+          <button>Filter</button>
+        </section>
+        <section class="product">
+          <section class="product-filter">
+            <section class="filter">
+              <p>Filter</p>
+              <p class="reset-filter">Reset Filter</p>
+            </section>
+            <label for="search-bar" class="filter-head">Search</label>
+            <input type="text" class="search-bar" id="search-bar" placeholder="Search Your Product" />
+            <p class="filter-head">Category</p>
+            <section class="checkbox">
+              <div class="no-check"></div>
+              <p class="filter-list">Favorite Product</p>
+            </section>
+            <section class="checkbox">
+              <div class="checked"></div>
+              <p class="filter-list">Coffee</p>
+            </section>
+            <section class="checkbox">
+              <div class="no-check"></div>
+              <p class="filter-list">Non Coffee</p>
+            </section>
+            <section class="checkbox">
+              <div class="no-check"></div>
+              <p class="filter-list">Foods</p>
+            </section>
+            <section class="checkbox">
+              <div class="no-check"></div>
+              <p class="filter-list">Add-On</p>
+            </section>
+            <!--  -->
+            <p class="filter-head">Sort By</p>
+            <section class="checkbox">
+              <div class="no-check"></div>
+              <p class="filter-list">Buy 1 get 1</p>
+            </section>
+            <section class="checkbox">
+              <div class="checked"></div>
+              <p class="filter-list">Flash Sale</p>
+            </section>
+            <section class="checkbox">
+              <div class="no-check"></div>
+              <p class="filter-list">Birthday Package</p>
+            </section>
+            <section class="checkbox">
+              <div class="no-check"></div>
+              <p class="filter-list">Cheap</p>
+            </section>
+            <p class="filter-head">Range Price</p>
+            <section class="range">
+              <div class="range-slider">
+                <span class="range-selected"></span>
+              </div>
+              <section class="slider">
+                <input class="min" min="330" max="580" type="range" value="374" />
+                <input class="max" min="330" max="580" type="range" value="500" />
+              </section>
+              <div class="range-price">
+                <p>Idr.<span class="min">374</span></p>
+                <p>Idr.<span class="max">500</span></p>
+              </div>
+            </section>
+            <button>Apply Filter</button>
+          </section>
+          <section class="product-list">
+            <section class="product-info">
+              <section class="product-img-1">
+                <p class="flash-sale">FLASH SALE!</p>
+              </section>
+              <section class="product-text">
+                <p class="product-name">Hazelnut Latte</p>
+                <p>You can explore the menu that we provide with fun and have their own taste and make your day better.</p>
+                <section class="star-cont">
+                  <img src="./assets/images/star-orange.svg" alt="star-orange" />
+                  <img src="./assets/images/star-orange.svg" alt="star-orange" />
+                  <img src="./assets/images/star-orange.svg" alt="star-orange" />
+                  <img src="./assets/images/star-orange.svg" alt="star-orange" />
+                  <img src="./assets/images/star-orange.svg" alt="star-orange" />
+                  <p class="star">5.0</p>
+                </section>
+                <section class="price">
+                  <p class="price-slash">IDR 20.000</p>
+                  <p class="price-actual">IDR 10.000</p>
+                </section>
+                <section class="button-cont">
+                  <button class="buy">Buy</button>
+                  <img src="./assets/images/ShoppingCart.svg" alt="shopping-cart" class="cart" />
+                </section>
+              </section>
+            </section>
+            <!--  -->
+            <section class="product-info">
+              <section class="product-img-2">
+                <p class="flash-sale">FLASH SALE!</p>
+              </section>
+              <section class="product-text">
+                <p class="product-name">Hazelnut Latte</p>
+                <p>You can explore the menu that we provide with fun and have their own taste and make your day better.</p>
+                <section class="star-cont">
+                  <img src="./assets/images/star-orange.svg" alt="star-orange" />
+                  <img src="./assets/images/star-orange.svg" alt="star-orange" />
+                  <img src="./assets/images/star-orange.svg" alt="star-orange" />
+                  <img src="./assets/images/star-orange.svg" alt="star-orange" />
+                  <img src="./assets/images/star-orange.svg" alt="star-orange" />
+                  <p class="star">5.0</p>
+                </section>
+                <section class="price">
+                  <p class="price-slash">IDR 20.000</p>
+                  <p class="price-actual">IDR 10.000</p>
+                </section>
+                <section class="button-cont">
+                  <button class="buy">Buy</button>
+                  <img src="./assets/images/ShoppingCart.svg" alt="shopping-cart" class="cart" />
+                </section>
+              </section>
+            </section>
+            <!--  -->
+            <section class="product-info">
+              <section class="product-img-1">
+                <p class="flash-sale">FLASH SALE!</p>
+              </section>
+              <section class="product-text">
+                <p class="product-name">Hazelnut Latte</p>
+                <p>You can explore the menu that we provide with fun and have their own taste and make your day better.</p>
+                <section class="star-cont">
+                  <img src="./assets/images/star-orange.svg" alt="star-orange" />
+                  <img src="./assets/images/star-orange.svg" alt="star-orange" />
+                  <img src="./assets/images/star-orange.svg" alt="star-orange" />
+                  <img src="./assets/images/star-orange.svg" alt="star-orange" />
+                  <img src="./assets/images/star-orange.svg" alt="star-orange" />
+                  <p class="star">5.0</p>
+                </section>
+                <section class="price">
+                  <p class="price-slash">IDR 20.000</p>
+                  <p class="price-actual">IDR 10.000</p>
+                </section>
+                <section class="button-cont">
+                  <button class="buy">Buy</button>
+                  <img src="./assets/images/ShoppingCart.svg" alt="shopping-cart" class="cart" />
+                </section>
+              </section>
+            </section>
+            <!--  -->
+            <section class="product-info">
+              <section class="product-img-2">
+                <p class="flash-sale">FLASH SALE!</p>
+              </section>
+              <section class="product-text">
+                <p class="product-name">Hazelnut Latte</p>
+                <p>You can explore the menu that we provide with fun and have their own taste and make your day better.</p>
+                <section class="star-cont">
+                  <img src="./assets/images/star-orange.svg" alt="star-orange" />
+                  <img src="./assets/images/star-orange.svg" alt="star-orange" />
+                  <img src="./assets/images/star-orange.svg" alt="star-orange" />
+                  <img src="./assets/images/star-orange.svg" alt="star-orange" />
+                  <img src="./assets/images/star-orange.svg" alt="star-orange" />
+                  <p class="star">5.0</p>
+                </section>
+                <section class="price">
+                  <p class="price-slash">IDR 20.000</p>
+                  <p class="price-actual">IDR 10.000</p>
+                </section>
+                <section class="button-cont">
+                  <button class="buy">Buy</button>
+                  <img src="./assets/images/ShoppingCart.svg" alt="shopping-cart" class="cart" />
+                </section>
+              </section>
+            </section>
+            <!--  -->
+            <section class="product-info">
+              <section class="product-img-1">
+                <p class="flash-sale">FLASH SALE!</p>
+              </section>
+              <section class="product-text">
+                <p class="product-name">Hazelnut Latte</p>
+                <p>You can explore the menu that we provide with fun and have their own taste and make your day better.</p>
+                <section class="star-cont">
+                  <img src="./assets/images/star-orange.svg" alt="star-orange" />
+                  <img src="./assets/images/star-orange.svg" alt="star-orange" />
+                  <img src="./assets/images/star-orange.svg" alt="star-orange" />
+                  <img src="./assets/images/star-orange.svg" alt="star-orange" />
+                  <img src="./assets/images/star-orange.svg" alt="star-orange" />
+                  <p class="star">5.0</p>
+                </section>
+                <section class="price">
+                  <p class="price-slash">IDR 20.000</p>
+                  <p class="price-actual">IDR 10.000</p>
+                </section>
+                <section class="button-cont">
+                  <button class="buy">Buy</button>
+                  <img src="./assets/images/ShoppingCart.svg" alt="shopping-cart" class="cart" />
+                </section>
+              </section>
+            </section>
+            <!--  -->
+            <section class="product-info">
+              <section class="product-img-2">
+                <p class="flash-sale">FLASH SALE!</p>
+              </section>
+              <section class="product-text">
+                <p class="product-name">Hazelnut Latte</p>
+                <p>You can explore the menu that we provide with fun and have their own taste and make your day better.</p>
+                <section class="star-cont">
+                  <img src="./assets/images/star-orange.svg" alt="star-orange" />
+                  <img src="./assets/images/star-orange.svg" alt="star-orange" />
+                  <img src="./assets/images/star-orange.svg" alt="star-orange" />
+                  <img src="./assets/images/star-orange.svg" alt="star-orange" />
+                  <img src="./assets/images/star-orange.svg" alt="star-orange" />
+                  <p class="star">5.0</p>
+                </section>
+                <section class="price">
+                  <p class="price-slash">IDR 20.000</p>
+                  <p class="price-actual">IDR 10.000</p>
+                </section>
+                <section class="button-cont">
+                  <button class="buy">Buy</button>
+                  <img src="./assets/images/ShoppingCart.svg" alt="shopping-cart" class="cart" />
+                </section>
+              </section>
+            </section>
+            <section class="product-pages">
+              <p class="active">1</p>
+              <p>2</p>
+              <p>3</p>
+              <p>4</p>
+              <div class="next"></div>
+            </section>
+          </section>
+        </section>
+      </section>
+    </main>
+
+    <footer>
+      <section class="bio">
+        <section class="footer-left">
+          <section class="coffee-logo">
+            <img class="coffee" src="./public/Vector.svg" alt="coffe.png" />
+            <p>Coffee Shop</p>
+          </section>
+          <p class="bio-desc">
+            Coffee Shop is a store that sells some good <br />
+            meals, and especially coffee. We provide <br />
+            high quality beans
+          </p>
+          <p class="trademarks">©2020CoffeeStore</p>
+        </section>
+        <section class="footer-product">
+          <p class="footer-title">Product</p>
+          <p class="footer-desc">Our Product</p>
+          <p class="footer-desc">Pricing</p>
+          <p class="footer-desc">Locations</p>
+          <p class="footer-desc">Countries</p>
+          <p class="footer-desc">Blog</p>
+        </section>
+        <section class="engage">
+          <p class="footer-title">Engage</p>
+          <p class="footer-desc">Partner</p>
+          <p class="footer-desc">FAQ</p>
+          <p class="footer-desc">About Us</p>
+          <p class="footer-desc">Privacy Policy</p>
+          <p class="footer-desc">Terms of Service</p>
+        </section>
+        <section class="social-media">
+          <p class="footer-title">Social Media</p>
+          <img class="FB" src="./assets/images/Facebook.svg" alt="Facebook.svg" />
+          <img class="TWT" src="./assets/images/Twitter.svg" alt="Twitter.svg" />
+          <img class="IG" src="./assets/images/Instagram.svg" alt="Instagram.svg" />
+        </section>
+      </section>
+    </footer>
+  </body>
+</html>
