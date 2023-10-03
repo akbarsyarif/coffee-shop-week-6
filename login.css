@@ -255,26 +255,24 @@ p.border {
 
 @media screen and (max-width: 769px) {
   body {
-    overflow: hidden;
+    background-image: url(./assets/images/login-page-bg.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0 60%;
   }
 
-  .transparent {
-    display: block;
-    background-color: hsla(0, 0%, 0%, 0.6);
+  body::before {
+    content: "";
+    background-color: hsla(0, 0%, 0%, 0.8);
     width: 100%;
-    height: 100vh;
+    height: 100%;
     position: absolute;
+    top: 0;
     z-index: -1;
   }
 
   .left {
-    position: absolute;
-    z-index: -2;
-  }
-
-  .left > img {
-    height: 130vh;
-    width: 100vw;
+    display: none;
   }
 
   .right {
@@ -324,9 +322,8 @@ p.border {
 }
 
 @media screen and (max-width: 426px) {
-  .left > img {
-    height: 110vh;
-    width: 100vw;
+  body {
+    background-position: 0 0;
   }
 
   .right {
