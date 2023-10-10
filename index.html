@@ -5,149 +5,189 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="coffee shop" />
     <link rel="icon" href="./public/Vector.svg" />
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Coffee Shop</title>
-    <link rel="stylesheet" href="./index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500&family=Sacramento&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./product1.css" />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              plusJakartaSans: "Plus Jakarta Sans, sans-serif",
+              sacramento: "Sacramento, cursive",
+            },
+            backgroundImage: {
+              "profile-pic-2": "url('./assets/images/profile-pic-2.webp')",
+            },
+            colors: {
+              "color-1": "#FF8906",
+              "color-1-hover": "#dd8500",
+              "color-2": "#0b132a",
+              "color-3": "#8e6447",
+            },
+          },
+        },
+      };
+
+      const toggleNavBar = () => {
+        let rightNav = document.querySelector(".right-nav");
+        let leftNav = document.querySelector(".left-nav");
+
+        rightNav.classList.toggle("nav-active");
+        leftNav.classList.toggle("nav-active");
+      };
+    </script>
   </head>
 
   <body>
-    <header>
-      <section class="left-head">
-        <section class="coffee-logo">
-          <img src="./assets/images/coffee-logo-white.svg" alt="coffee-shop-logo" />
-          <h1>Coffee Shop</h1>
+    <header class="absolute w-[100%] z-[1] flex py-[2vh] px-[15px] items-center bg-[#0b0909]/[0.13] justify-between md:py-[2vh] md:px-[3vw] xl:px-[9vw]">
+      <section class="left-head flex md:flex md:gap-[3.5vw]">
+        <section class="coffee-logo flex gap-[15px] items-center">
+          <img class="select-none" src="./assets/images/coffee-logo-white.svg" alt="coffee-shop-logo" />
+          <h1 class="text-white text-xl font-sacramento select-none cursor-pointer text-xl font-normal">Coffee Shop</h1>
         </section>
-        <nav class="left-nav">
-          <p class="active">Home</p>
-          <p>Product</p>
+        <nav class="left-nav items-center hidden md:flex md:gap-[3vw] text-sm font-medium">
+          <p class="text-white select-none cursor-pointer pb-2">Home</p>
+          <p class="active text-white select-none cursor-pointer pb-2 border-b border-color-1">Product</p>
         </nav>
       </section>
-      <img class="hamburger" src="./assets/images/hamburger-menu.svg" alt="hamburger" />
-      <nav class="right-nav">
-        <img src="./assets/images/Search.svg" alt="seacrh" />
-        <img src="./assets/images/ShoppingCart -white.svg" alt="shopping-cart" />
-        <a href="./login.html">
-          <button class="signin">SignIn</button>
-        </a>
-        <button class="signup">Sign Up</button>
+      <img class="hamburger cursor-pointer md:hidden select-none" id="hamburger-menu" src="./assets/images/hamburger-menu.svg" alt="hamburger" onclick="toggleNavBar(); return false" />
+      <nav class="right-nav hidden md:flex md:items-center md:gap-[22px]">
+        <img class="w-[24px] h-[24px]" src="./assets/images/Search.svg" alt="search" />
+        <img class="w-[24px] h-[24px]" src="./assets/images/ShoppingCart -white.svg" alt="shopping-cart" />
+        <button type="button" class="text-sm text-white bg-transparent border border-white hover:bg-white/50 px-2 md:px-[18px] py-2 md:py-[12px] rounded-md w-[100%] hover:bg-color-1-hover">Sign In</button>
+        <button type="button" class="text-sm text-color-2 bg-color-1 border border-transparent px-2 md:px-[18px] py-2 md:py-[12px] rounded-md w-[100%] hover:bg-color-1-hover whitespace-nowrap">Sign Up</button>
       </nav>
     </header>
 
-    <main>
-      <section class="hero">
-        <section class="left-hero">
-          <h1>Start Your Day with Coffee and Good Meals</h1>
-          <p>We provide quality beans, good taste, and healthy meals made by love just for you. Start your day with us for a bigger smile!</p>
-          <button>Get Started</button>
-          <section class="shop-info">
-            <section class="info">
-              <p class="number">90+</p>
+    <main class="">
+      <section class="hero bg-gradient-to-t from-[#0b0909] to-[#777c82] flex pl-[15px] md:pl-[3vw] xl:pl-[9vw]">
+        <section class="left-hero flex flex-col items-center lg:items-start gap-[25px] py-[10vh] md:py-[20vh] lg:py-[30vh] w-[100%] lg:w-[50%] xl:w-[46%] pr-[3vw] lg:pr-[15vw]">
+          <h1 class="text-white text-[48px] font-medium text-center lg:text-start">Start Your Day with Coffee and Good Meals</h1>
+          <p class="text-white text-center lg:text-start">We provide quality beans, good taste, and healthy meals made by love just for you. Start your day with us for a bigger smile!</p>
+          <button type="button" class="w-[143px] h-[50px] p-[10px] bg-color-1 hover:bg-color-1-hover cursor-pointer text-color-2 text-sm font-medium rounded-[5px]">Get Started</button>
+          <section class="shop-info flex flex-col md:flex-row gap-[30px] justify-between text-white">
+            <section class="info w-[130px] md:border-r">
+              <p class="number text-color-1 text-[48px] font-medium">90+</p>
               <p class="text">Staffs</p>
             </section>
-            <section class="info">
-              <p class="number">30+</p>
+            <section class="info w-[130px] md:border-r">
+              <p class="number text-color-1 text-[48px] font-medium">30+</p>
               <p class="text">Stores</p>
             </section>
-            <section class="info-last">
-              <p class="number">800+</p>
+            <section class="info-last w-[130px]">
+              <p class="number text-color-1 text-[48px] font-medium">800+</p>
               <p class="text">Customers</p>
             </section>
           </section>
         </section>
-        <section class="right-hero">
+        <section class="right-hero hidden lg:block relative bg-[url(./assets/images/home-hero.webp)] bg-cover w-[80%] pr-[15px] md:pr-[3vw] xl:pr-[9vw]">
           <!-- <img src="./assets/images/hero.bg.webp" alt="" /> -->
-          <section class="chat-circle"></section>
+          <section class="chat-circle w-[80px] h-[80px] absolute top-[80%] right-[14%] bg-color-1 bg-[url(./assets/images/ChatCircleDots.svg)] bg-no-repeat bg-center rounded-full"></section>
         </section>
       </section>
 
-      <section class="info-1">
-        <section class="info-1-left">
-          <h2>We Provide <span class="info-1-head">Good Coffee</span> and <span class="info-1-head">Healthy Meals</span></h2>
-          <p>You can explore the menu that we provide with fun and have their own taste and make your day better</p>
-          <ul>
-            <li>High quality beans</li>
-            <li>Healthy meals, you can request the ingredients</li>
-            <li>Chat with our staff to get better experience for ordering</li>
-            <li>Free member card with a minimum purchase of IDR 200.000.</li>
+      <section class="info-1 flex pl-[15px] md:pl-[3vw] xl:pl-[9vw]">
+        <section class="info-1-left w-[100%] lg:w-[50%] xl:w-[46%] flex flex-col gap-[25px] pr-[3vw] xl:pr-[5vw]">
+          <h2
+            class="relative text-center lg:text-start text-color-2 text-[48px] font-medium pt-[6vh] lg:pl-[24px] lg:pr-[15%] lg:before:absolute lg:before:h-[68px] lg:before:top-[125px] lg:before:left-[0] lg:before:border-4 lg:before:border-color-1"
+          >
+            We Provide <span class="info-1-head text-[#8e6447]">Good Coffee</span> and <span class="info-1-head text-[#8e6447]">Healthy Meals</span>
+          </h2>
+          <div class="underlined h-[7px] w-[68px] bg-color-1 mx-auto lg:hidden"></div>
+          <p class="text-[#4f5665] text-center lg:text-start">You can explore the menu that we provide with fun and have their own taste and make your day better</p>
+          <ul class="list-none text-[#4f5665] text-sm leading-[30px]">
+            <li class="before:inline-block before:h-[24px] before:w-[24px] before:mr-[12px] before:bg-[url(./assets/images/green-check-circle.svg)] before:translate-y-[7px] pb-[25px]">High quality beans</li>
+            <li class="before:inline-block before:h-[24px] before:w-[24px] before:mr-[12px] before:bg-[url(./assets/images/green-check-circle.svg)] before:translate-y-[7px] pb-[25px]">Healthy meals, you can request the ingredients</li>
+            <li class="before:inline-block before:h-[24px] before:w-[24px] before:mr-[12px] before:bg-[url(./assets/images/green-check-circle.svg)] before:translate-y-[7px] pb-[25px]">
+              Chat with our staff to get better experience for ordering
+            </li>
+            <li class="before:inline-block before:h-[24px] before:w-[24px] before:mr-[12px] before:bg-[url(./assets/images/green-check-circle.svg)] before:translate-y-[7px] pb-[25px] lg:pb-[20vh]">
+              Free member card with a minimum purchase of IDR 200.000.
+            </li>
           </ul>
         </section>
-        <section class="info-1-right"></section>
+        <section class="info-1-right bg-[url(./assets/images/info-1-pic.webp)] bg-cover bg-no-repeat lg:w-[50%] xl:w-[54%] 2xl:w-[62%] bg-[center_left_-400px] xl:bg-center"></section>
       </section>
 
-      <section class="favorite-cont">
-        <h2>Here is People's <span>Favorite</span></h2>
-        <div class="underlined"></div>
-        <p>Let's choose and have a bit taste of people's favorite. It might be yours too!</p>
-        <section class="favorite-list">
+      <section class="favorite-cont flex flex-col gap-[25px] items-center px-[15px] md:px-[3vw] xl:px-[9vw] py-[8vh]">
+        <h2 class="text-color-2 text-[48px] font-medium text-center">Here is People's <span class="text-[#8e6447]">Favorite</span></h2>
+        <div class="underlined h-[7px] w-[68px] bg-color-1"></div>
+        <p class="text-[#4f5665]">Let's choose and have a bit taste of people's favorite. It might be yours too!</p>
+        <section class="favorite-list mt-[3.5vh] grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-[20px]">
           <!-- PRODUCT 1 -->
           <section class="product-info">
-            <section class="product-img"></section>
-            <section class="product-text">
-              <p class="product-name">Hazelnut Latte</p>
-              <p>You can explore the menu that we provide with fun and have their own taste and make your day better.</p>
-              <p class="price">IDR 20.000</p>
-              <section class="button-cont">
-                <button class="buy">Buy</button>
-                <img src="./assets/images/ShoppingCart.svg" alt="shopping-cart" class="cart" />
+            <section class="product-img w-[280px] h-[268px] bg-[url(./assets/images/product-1.webp)]"></section>
+            <section class="product-text mt-[-50px] mx-auto pt-[11px] px-[10px] pb-[25px] bg-white w-[262px] shadow-md shadow-black/50">
+              <p class="product-name mb-[12px] text-color-2 text-[22px] font-medium">Hazelnut Latte</p>
+              <p class="mb-[12px] text-[#4f5665] text-sm">You can explore the menu that we provide with fun and have their own taste and make your day better.</p>
+              <p class="price mb-[12px] text-color-1 text-[22px] font-medium">IDR 20.000</p>
+              <section class="button-cont flex items-center gap-[10px]">
+                <button class="buy w-[177px] h-[35px] bg-color-1 hover:bg-color-1-hover cursor-pointer border border-transparent rounded-[5px] text-color-2 text-sm font-medium">Buy</button>
+                <img src="./assets/images/ShoppingCart.svg" alt="shopping-cart" class="cart w-[58px] h-[35px] border border-color-1 rounded-[5px] cursor-pointer hover:bg-[#e8e8e8]" />
               </section>
             </section>
           </section>
           <!-- PRODUCT 2 -->
-          <section class="product-info">
-            <section class="product-img-2"></section>
-            <section class="product-text">
-              <p class="product-name">Hazelnut Latte</p>
-              <p>You can explore the menu that we provide with fun and have their own taste and make your day better.</p>
-              <p class="price">IDR 20.000</p>
-              <section class="button-cont">
-                <button class="buy">Buy</button>
-                <img src="./assets/images/ShoppingCart.svg" alt="shopping-cart" class="cart" />
+          <section class="product-info hidden md:block">
+            <section class="product-img-2 w-[280px] h-[268px] bg-[url(./assets/images/product-2.webp)]"></section>
+            <section class="product-text mt-[-50px] mx-auto pt-[11px] px-[10px] pb-[25px] bg-white w-[262px] shadow-md shadow-black/50">
+              <p class="product-name mb-[12px] text-color-2 text-[22px] font-medium">Hazelnut Latte</p>
+              <p class="mb-[12px] text-[#4f5665] text-sm">You can explore the menu that we provide with fun and have their own taste and make your day better.</p>
+              <p class="price mb-[12px] text-color-1 text-[22px] font-medium">IDR 20.000</p>
+              <section class="button-cont flex items-center gap-[10px]">
+                <button class="buy w-[177px] h-[35px] bg-color-1 hover:bg-color-1-hover cursor-pointer border border-transparent rounded-[5px] text-color-2 text-sm font-medium">Buy</button>
+                <img src="./assets/images/ShoppingCart.svg" alt="shopping-cart" class="cart w-[58px] h-[35px] border border-color-1 rounded-[5px] cursor-pointer hover:bg-[#e8e8e8]" />
               </section>
             </section>
           </section>
           <!-- PRODUCT 3 -->
-          <section class="product-info">
-            <section class="product-img-3"></section>
-            <section class="product-text">
-              <p class="product-name">Hazelnut Latte</p>
-              <p>You can explore the menu that we provide with fun and have their own taste and make your day better.</p>
-              <p class="price">IDR 20.000</p>
-              <section class="button-cont">
-                <button class="buy">Buy</button>
-                <img src="./assets/images/ShoppingCart.svg" alt="shopping-cart" class="cart" />
+          <section class="product-info hidden lg:block">
+            <section class="product-img-3 w-[280px] h-[268px] bg-[url(./assets/images/product-3.webp)]"></section>
+            <section class="product-text mt-[-50px] mx-auto pt-[11px] px-[10px] pb-[25px] bg-white w-[262px] shadow-md shadow-black/50">
+              <p class="product-name mb-[12px] text-color-2 text-[22px] font-medium">Hazelnut Latte</p>
+              <p class="mb-[12px] text-[#4f5665] text-sm">You can explore the menu that we provide with fun and have their own taste and make your day better.</p>
+              <p class="price mb-[12px] text-color-1 text-[22px] font-medium">IDR 20.000</p>
+              <section class="button-cont flex items-center gap-[10px]">
+                <button class="buy w-[177px] h-[35px] bg-color-1 hover:bg-color-1-hover cursor-pointer border border-transparent rounded-[5px] text-color-2 text-sm font-medium">Buy</button>
+                <img src="./assets/images/ShoppingCart.svg" alt="shopping-cart" class="cart w-[58px] h-[35px] border border-color-1 rounded-[5px] cursor-pointer hover:bg-[#e8e8e8]" />
               </section>
             </section>
           </section>
           <!-- PRODUCT 4 -->
-          <section class="product-info">
-            <section class="product-img-4"></section>
-            <section class="product-text">
-              <p class="product-name">Hazelnut Latte</p>
-              <p>You can explore the menu that we provide with fun and have their own taste and make your day better.</p>
-              <p class="price">IDR 20.000</p>
-              <section class="button-cont">
-                <button class="buy">Buy</button>
-                <img src="./assets/images/ShoppingCart.svg" alt="shopping-cart" class="cart" />
+          <section class="product-info hidden xl:block">
+            <section class="product-img-4 w-[280px] h-[268px] bg-[url(./assets/images/product-4.webp)]"></section>
+            <section class="product-text mt-[-50px] mx-auto pt-[11px] px-[10px] pb-[25px] bg-white w-[262px] shadow-md shadow-black/50">
+              <p class="product-name mb-[12px] text-color-2 text-[22px] font-medium">Hazelnut Latte</p>
+              <p class="mb-[12px] text-[#4f5665] text-sm">You can explore the menu that we provide with fun and have their own taste and make your day better.</p>
+              <p class="price mb-[12px] text-color-1 text-[22px] font-medium">IDR 20.000</p>
+              <section class="button-cont flex items-center gap-[10px]">
+                <button class="buy w-[177px] h-[35px] bg-color-1 hover:bg-color-1-hover cursor-pointer border border-transparent rounded-[5px] text-color-2 text-sm font-medium">Buy</button>
+                <img src="./assets/images/ShoppingCart.svg" alt="shopping-cart" class="cart w-[58px] h-[35px] border border-color-1 rounded-[5px] cursor-pointer hover:bg-[#e8e8e8]" />
               </section>
             </section>
           </section>
         </section>
       </section>
 
-      <section class="globe">
-        <h2 class="globe-header"><span>Visit Our Store </span>in the Spot on the Map Below</h2>
-        <div></div>
-        <p class="globe-text">You can explore the menu that we provide with fun and have their own taste and make your day better.</p>
+      <section class="globe flex flex-col gap-[25px] items-center px-[15px] md:px-[3vw] xl:px-[9vw] py-[8vh]">
+        <h2 class="globe-header text-color-2 text-[48px] font-medium text-center"><span class="text-[#8e6447]">Visit Our Store </span>in the Spot on the Map Below</h2>
+        <div class="underlined h-[7px] w-[68px] bg-color-1"></div>
+        <p class="globe-text text-[#4f5665]">You can explore the menu that we provide with fun and have their own taste and make your day better.</p>
         <img src="./assets/images/Huge-Global.webp" alt="Huge-Global" />
       </section>
 
-      <section class="testimony">
-        <img src="./assets/images/testimony-1.jpg" alt="testimony-1" />
-        <section class="testi-box">
+      <section class="testimony bg-gradient-to-b from-[#777c82] to-[#0b0909] flex flex-col items-center lg:flex-row gap-[25px] px-[15px] md:px-[3vw] xl:px-[9vw] py-[8vh]">
+        <img class="sm:w-[300px] md:w-[500px] xl:w-[578px] sm:h-[250px] md:h-[400px] xl:-h[432px]" src="./assets/images/testimony-1.webp" alt="testimony-1" />
+        <section class="testi-box flex flex-col gap-[25px] text-white">
           <p>TESTIMONIAL</p>
-          <h2 class="testi-name">Viezh Robert</h2>
-          <p class="testi-job">Manager Coffee Shop</p>
+          <h2 class="testi-name relative pl-[25px] text-[48px] font-medium before:absolute before:h-[68px] before:border-l-4 before:border-color-1 before:left-[0px]">Viezh Robert</h2>
+          <p class="testi-job text-color-1">Manager Coffee Shop</p>
           <p>“Wow... I am very happy to spend my whole day here. the Wi-fi is good, and the coffee and meals tho. I like it here!! Very recommended!“</p>
-          <section class="star-cont">
+          <section class="star-cont flex gap-[25px]">
             <img src="./assets/images/star-orange.svg" alt="star-orange" />
             <img src="./assets/images/star-orange.svg" alt="star-orange" />
             <img src="./assets/images/star-orange.svg" alt="star-orange" />
@@ -155,55 +195,57 @@
             <img src="./assets/images/star-orange.svg" alt="star-orange" />
             <p class="star">5.0</p>
           </section>
-          <section class="page-nav">
-            <div class="back"></div>
-            <div class="next"></div>
+          <section class="page-nav flex gap-[10px]">
+            <div class="back cursor-pointer hover:bg-[#e8e8e8] w-[47px] h-[47px] bg-white rounded-full bg-[url(assets/images/arrow-left.svg)] bg-no-repeat bg-center"></div>
+            <div class="next cursor-pointer hover:bg-color-1-hover w-[47px] h-[47px] bg-color-1 rounded-full bg-[url(assets/images/arrow-right.svg)] bg-no-repeat bg-center"></div>
           </section>
-          <section class="page">
-            <div class="active"></div>
-            <div></div>
-            <div></div>
-            <div></div>
+          <section class="page flex gap-[10px]">
+            <div class="active w-[26px] h-[8px] bg-color-1 rounded-full"></div>
+            <div class="w-[8px] h-[8px] bg-[#dde0e4] rounded-full"></div>
+            <div class="w-[8px] h-[8px] bg-[#dde0e4] rounded-full"></div>
+            <div class="w-[8px] h-[8px] bg-[#dde0e4] rounded-full"></div>
           </section>
         </section>
       </section>
     </main>
 
-    <footer>
-      <section class="bio">
-        <section class="footer-left">
-          <section class="coffee-logo">
+    <footer class="py-[2vh] px-[15px] bg-[#f8f8f8] md:py-[2vh] md:px-[3vw] xl:px-[9vw]">
+      <section class="bio flex flex-col md:flex-row gap-[30px] lg:gap-[60px]">
+        <section class="footer-left flex flex-col gap-[24px] mt-[15px]">
+          <section class="coffee-logo flex gap-[15px] items-center">
             <img class="coffee" src="./public/Vector.svg" alt="coffe.png" />
-            <p>Coffee Shop</p>
+            <p class="font-sacramento text-xl text-color-3">Coffee Shop</p>
           </section>
-          <p class="bio-desc">
+          <p class="bio-desc text-[#4f5665] mb-[8px]">
             Coffee Shop is a store that sells some good <br />
             meals, and especially coffee. We provide <br />
             high quality beans
           </p>
-          <p class="trademarks">©2020CoffeeStore</p>
+          <p class="trademarks text-[#afb5c0]">©2020CoffeeStore</p>
         </section>
-        <section class="product">
-          <p class="footer-title">Product</p>
-          <p class="footer-desc">Our Product</p>
-          <p class="footer-desc">Pricing</p>
-          <p class="footer-desc">Locations</p>
-          <p class="footer-desc">Countries</p>
-          <p class="footer-desc">Blog</p>
+        <section class="footer-product flex flex-col gap-[10px]">
+          <p class="footer-title mb-[10px] text-color-2 text-lg font-medium">Product</p>
+          <p class="footer-desc text-[#4f5665]">Our Product</p>
+          <p class="footer-desc text-[#4f5665]">Pricing</p>
+          <p class="footer-desc text-[#4f5665]">Locations</p>
+          <p class="footer-desc text-[#4f5665]">Countries</p>
+          <p class="footer-desc text-[#4f5665]">Blog</p>
         </section>
-        <section class="engage">
-          <p class="footer-title">Engage</p>
-          <p class="footer-desc">Partner</p>
-          <p class="footer-desc">FAQ</p>
-          <p class="footer-desc">About Us</p>
-          <p class="footer-desc">Privacy Policy</p>
-          <p class="footer-desc">Terms of Service</p>
+        <section class="engage flex flex-col gap-[10px]">
+          <p class="footer-title mb-[10px] text-color-2 text-lg font-medium">Engage</p>
+          <p class="footer-desc text-[#4f5665]">Partner</p>
+          <p class="footer-desc text-[#4f5665]">FAQ</p>
+          <p class="footer-desc text-[#4f5665]">About Us</p>
+          <p class="footer-desc text-[#4f5665]">Privacy Policy</p>
+          <p class="footer-desc text-[#4f5665]">Terms of Service</p>
         </section>
-        <section class="social-media">
-          <p class="footer-title">Social Media</p>
-          <img class="FB" src="./assets/images/Facebook.svg" alt="Facebook.svg" />
-          <img class="TWT" src="./assets/images/Twitter.svg" alt="Twitter.svg" />
-          <img class="IG" src="./assets/images/Instagram.svg" alt="Instagram.svg" />
+        <section class="social-media flex flex-col gap-[10px]">
+          <p class="footer-title mb-[10px] text-color-2 text-lg font-medium">Social Media</p>
+          <div class="flex">
+            <img class="FB w-[60px] h-[60px] ml-[-13px]" src="./assets/images/Facebook.svg" alt="Facebook.svg" />
+            <img class="TWT w-[60px] h-[60px]" src="./assets/images/Twitter.svg" alt="Twitter.svg" />
+            <img class="IG w-[60px] h-[60px]" src="./assets/images/Instagram.svg" alt="Instagram.svg" />
+          </div>
         </section>
       </section>
     </footer>

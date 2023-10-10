@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="coffee shop" />
+    <link rel="icon" href="./public/Vector.svg" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Coffee Shop - Product Detail</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500&family=Sacramento&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./checkout.css" />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              plusJakartaSans: "Plus Jakarta Sans, sans-serif",
+              sacramento: "Sacramento, cursive",
+            },
+            backgroundImage: {
+              "profile-pic-2": "url('./assets/images/profile-pic-2.webp')",
+            },
+            colors: {
+              "color-1": "#FF8906",
+              "color-1-hover": "#dd8500",
+              "color-2": "#0b132a",
+              "color-3": "#8e6447",
+            },
+          },
+        },
+      };
+
+      const toggleNavBar = () => {
+        let rightNav = document.querySelector(".right-nav");
+        let leftNav = document.querySelector(".left-nav");
+
+        rightNav.classList.toggle("nav-active");
+        leftNav.classList.toggle("nav-active");
+      };
+
+      const headDropDown = () => {
+        let dropItem = document.querySelector(".drop-down-item");
+
+        dropItem.classList.toggle("drop-active");
+      };
+    </script>
+  </head>
+
+  <body>
+    <header class="flex py-[2vh] px-[15px] items-center bg-black justify-between md:py-[2vh] md:px-[3vw] xl:px-[9vw]">
+      <section class="left-head flex md:flex md:gap-[3.5vw]">
+        <section class="coffee-logo flex gap-[15px] items-center">
+          <img class="select-none" src="./assets/images/coffee-logo-white.svg" alt="coffee-shop-logo" />
+          <h1 class="text-white text-xl font-sacramento select-none cursor-pointer text-xl font-normal">Coffee Shop</h1>
+        </section>
+        <nav class="left-nav items-center hidden md:flex md:gap-[3vw] text-sm font-medium">
+          <p class="text-white select-none cursor-pointer pb-2">Home</p>
+          <p class="active text-white select-none cursor-pointer pb-2 border-b border-color-1">Product</p>
+        </nav>
+      </section>
+      <img class="hamburger cursor-pointer md:hidden select-none" id="hamburger-menu" src="./assets/images/hamburger-menu.svg" alt="hamburger" onclick="toggleNavBar(); return false" />
+      <nav class="right-nav hidden md:flex md:items-center md:gap-[22px]">
+        <img class="w-[24px] h-[24px]" src="./assets/images/Search.svg" alt="search" />
+        <img class="w-[24px] h-[24px]" src="./assets/images/ShoppingCart -white.svg" alt="shopping-cart" />
+        <a href="#" class="md:hidden">
+          <p class="history text-white">History</p>
+        </a>
+        <a href="./profile.html" class="md:hidden">
+          <p class="profile text-white">Profile</p>
+        </a>
+        <div class="flex items-center gap-2">
+          <div class="profile-pic bg-profile-pic-2 w-[48px] h-[48px]"></div>
+          <div class="hidden md:block cursor-pointer"><img src="./assets/images/Arrow - Down Circle.svg" alt="drop-down" onclick="headDropDown(); return false" /></div>
+        </div>
+        <section class="drop-down-item text-white hidden">
+          <p class="history text-base">History</p>
+          <p class="profile text-base">Profile</p>
+          <button class="logout block text-base text-white bg-color-1 px-2 py-2 rounded-md w-[100%] hover:bg-color-1-hover" type="button">Log Out</button>
+        </section>
+        <button class="logout text-white bg-color-1 px-2 py-2 rounded-md w-[50vw] md:hidden hover:bg-color-1-hover" type="button">Log Out</button>
+      </nav>
+    </header>
+
+    <main class="py-4 md:py-[5vh] px-[15px] md:items-start md:px-[3vw] xl:px-[9vw] xl:py-[8vh]">
+      <section class="lg:flex gap-[20px]">
+        <section class="left mb-7 lg:flex-1">
+          <img class="mb-[5px] mx-auto xl:mb-[27px] w-[330px] md:w-[500px] lg:w-[500px] xl:w-[580px]" src="./assets/images/product-4.webp" alt="" />
+          <div class="flex justify-center gap-[5px] xl:gap-[20px]">
+            <img class="w-[106px] md:w-[163px] lg:w-[151px] xl:w-[177px]" src="./assets/images/product-4-1.webp" alt="image-1" />
+            <img class="w-[106px] md:w-[163px] lg:w-[151px] xl:w-[177px]" src="./assets/images/product-4-2.webp" alt="image-2" />
+            <img class="w-[106px] md:w-[163px] lg:w-[151px] xl:w-[177px]" src=".//assets/images/product-4-3.webp" alt="image-3" />
+          </div>
+        </section>
+        <section class="right flex flex-col gap-[16px] lg:flex-1">
+          <div class="">
+            <p class="flash w-fit bg-[#d00000] p-[10px] rounded-3xl text-white text-lg font-bold">FLASH SALE!</p>
+          </div>
+          <h1 class="product-name text-[#0b0909] text-[48px] font-medium">Hazelnut Latte</h1>
+          <div class="price flex gap-[12px] items-center">
+            <p class="actual-price text-[#d00000] text-xs font-medium line-through">IDR 20.000</p>
+            <p class="discount-price text-color-1 text-[22px] font-medium">IDR 10.000</p>
+          </div>
+          <div class="rating-cont flex gap-[10px]">
+            <img src="./assets/images/star-orange.svg" alt="star" />
+            <img src="./assets/images/star-orange.svg" alt="star" />
+            <img src="./assets/images/star-orange.svg" alt="star" />
+            <img src="./assets/images/star-orange.svg" alt="star" />
+            <img src="./assets/images/star-orange.svg" alt="star" />
+            <p class="rating text-[#4f5665] text-sm">5.0</p>
+          </div>
+          <div class="review flex flex-col md:flex-row gap-[16px] text-lg text-[#4f5665]">
+            <p class="review-text">200+ Review</p>
+            <p class="hidden md:block">|</p>
+            <div class="recom-cont flex gap-[16px] mt-[-20px] md:mt-[0px]">
+              <p class="recom">Recommendation</p>
+              <img class="w-[24px] h-[28px]" src="./assets/images/ThumbsUp.svg" alt="thumbsUp" />
+            </div>
+          </div>
+          <p class="product-desc text-[#4f5665]">
+            Cold brewing is a method of brewing that combines ground coffee and cool water and uses time instead of heat to extract the flavor. It is brewed in small batches and steeped for as long as 48 hours.
+          </p>
+          <div class="quantity-cont flex items-center">
+            <div class="cursor-pointer select-none minus border border-color-1 rounded p-[9px]">
+              <img src="./assets/images/minus.svg" alt="minus" />
+            </div>
+            <div class="quantity-text w-[46px] h-[36px] text-center border-t border-b border-[#e8e8e8]">
+              <p class="text-color-2 text-lg font-bold leading-9">1</p>
+            </div>
+            <div class="cursor-pointer select-none plus border bg-color-1 border-transparent rounded p-[9px]">
+              <img src="./assets/images/plus.svg" alt="plus" />
+            </div>
+          </div>
+          <p class="choose-size text-[#0b0909] text-lg font-bold">Choose Size</p>
+          <div class="size-cont flex flex-col md:flex-row gap-[5px] md:gap-[31px]">
+            <div class="active flex-1 p-[10px] border border-color-1 text-center"><p class="text-[#0b0909]">Regular</p></div>
+            <div class="flex-1 p-[10px] border border-[#4f5665] text-center"><p class="text-[#4f5665]">Medium</p></div>
+            <div class="flex-1 p-[10px] border border-[#4f5665] text-center"><p class="text-[#4f5665]">Large</p></div>
+          </div>
+          <p class="hot-ice text-[#0b0909] text-lg font-bold">Hot/Ice?</p>
+          <div class="flex flex-col md:flex-row gap-[5px] md:gap-[31px] mb-[40px] lg:mb-[59px]">
+            <div class="active flex-1 p-[10px] border border-color-1 text-center"><p class="text-[#0b0909]">Ice</p></div>
+            <div class="flex-1 p-[10px] border border-[#4f5665] text-center"><p class="text-[#4f5665]">hot</p></div>
+          </div>
+          <div class="button-cont flex flex-col md:flex-row gap-[5px] md:gap-[17px]">
+            <div class="buy p-[10px] bg-color-1 rounded-md flex-1 text-color-2 text-sm font-medium text-center">Buy</div>
+            <div class="cart flex gap-[10px] justify-center items-center p-[10px] bg-white border border-color-1 rounded-md flex-1 text-color-2 text-sm font-medium">
+              <img src="./assets/images/ShoppingCart.svg" alt="cart" />
+              <p class="text-color-1 text-sm font-medium">Add to cart</p>
+            </div>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <footer class="py-[2vh] px-[15px] bg-[#f8f8f8] md:py-[2vh] md:px-[3vw] xl:px-[9vw]">
+      <section class="bio flex flex-col md:flex-row gap-[30px] lg:gap-[60px]">
+        <section class="footer-left flex flex-col gap-[24px] mt-[15px]">
+          <section class="coffee-logo flex gap-[15px] items-center">
+            <img class="coffee" src="./public/Vector.svg" alt="coffe.png" />
+            <p class="font-sacramento text-xl text-color-3">Coffee Shop</p>
+          </section>
+          <p class="bio-desc text-[#4f5665] mb-[8px]">
+            Coffee Shop is a store that sells some good <br />
+            meals, and especially coffee. We provide <br />
+            high quality beans
+          </p>
+          <p class="trademarks text-[#afb5c0]">©2020CoffeeStore</p>
+        </section>
+        <section class="footer-product flex flex-col gap-[10px]">
+          <p class="footer-title mb-[10px] text-color-2 text-lg font-medium">Product</p>
+          <p class="footer-desc text-[#4f5665]">Our Product</p>
+          <p class="footer-desc text-[#4f5665]">Pricing</p>
+          <p class="footer-desc text-[#4f5665]">Locations</p>
+          <p class="footer-desc text-[#4f5665]">Countries</p>
+          <p class="footer-desc text-[#4f5665]">Blog</p>
+        </section>
+        <section class="engage flex flex-col gap-[10px]">
+          <p class="footer-title mb-[10px] text-color-2 text-lg font-medium">Engage</p>
+          <p class="footer-desc text-[#4f5665]">Partner</p>
+          <p class="footer-desc text-[#4f5665]">FAQ</p>
+          <p class="footer-desc text-[#4f5665]">About Us</p>
+          <p class="footer-desc text-[#4f5665]">Privacy Policy</p>
+          <p class="footer-desc text-[#4f5665]">Terms of Service</p>
+        </section>
+        <section class="social-media flex flex-col gap-[10px]">
+          <p class="footer-title mb-[10px] text-color-2 text-lg font-medium">Social Media</p>
+          <div class="flex">
+            <img class="FB w-[60px] h-[60px] ml-[-13px]" src="./assets/images/Facebook.svg" alt="Facebook.svg" />
+            <img class="TWT w-[60px] h-[60px]" src="./assets/images/Twitter.svg" alt="Twitter.svg" />
+            <img class="IG w-[60px] h-[60px]" src="./assets/images/Instagram.svg" alt="Instagram.svg" />
+          </div>
+        </section>
+      </section>
+    </footer>
+  </body>
+</html>

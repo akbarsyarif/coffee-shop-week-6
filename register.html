@@ -5,48 +5,107 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="coffee shop" />
     <link rel="icon" href="./public/Vector.svg" />
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Coffee Shop - Register</title>
-    <link rel="stylesheet" href="./register.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500&family=Sacramento&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./product1.css" />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              plusJakartaSans: "Plus Jakarta Sans, sans-serif",
+              sacramento: "Sacramento, cursive",
+            },
+            backgroundImage: {
+              "profile-pic-2": "url('./assets/images/profile-pic-2.webp')",
+            },
+            colors: {
+              "color-1": "#FF8906",
+              "color-1-hover": "#dd8500",
+              "color-2": "#0b132a",
+              "color-3": "#8e6447",
+            },
+          },
+        },
+      };
+    </script>
   </head>
 
   <body>
-    <main>
-      <section class="left">
-        <img src="./assets/images/register-bg.webp" alt="register-page-bg" />
+    <main class="flex">
+      <section class="left hidden lg:block mr-[30px] xl:mr-[70px] bg-[url(./assets/images/register-bg.webp)] bg-cover w-[460px]">
+        <!-- <img class="" src="./assets/images/register-bg.webp" alt="register-page-bg" /> -->
       </section>
-      <section class="right">
-        <section class="coffee-logo">
+      <section class="right bg-[url(./assets/images/register-bg.webp)] bg-no-repeat bg-cover lg:bg-none px-[15px] lg:px-[0px] pt-[30px] lg:pt-[6.5vh] pb-[14.5vh] w-[100%] lg:w-[50%]">
+        <section class="coffee-logo flex gap-[15px] items-center mb-[4vh]">
           <img src="./public/Vector.svg" alt="coffee-shop-logo" />
           <a href="./index.html">
-            <h1>Coffee Shop</h1>
+            <h1 class="font-sacramento text-[#8e6447] text-[20px] cursor-pointer">Coffee Shop</h1>
           </a>
         </section>
-        <section class="register-form">
-          <h2>Register</h2>
-          <p>Fill out the form correctly</p>
+        <section class="register-form flex flex-col gap-[25px]">
+          <h2 class="text-[#8e6447] text-[22px] font-semibold">Register</h2>
+          <p class="text-white lg:text-[#4f5665]">Fill out the form correctly</p>
 
-          <label for="full-name">Full Name</label>
-          <input type="text" id="full-name" placeholder="Enter Your Full Name" />
-          <label for="email">Email</label>
-          <input type="text" id="email" placeholder="Enter Your Email" />
-          <label for="password">Password</label>
-          <span class="eye-slash">
-            <input type="password" class="password" id="password" placeholder="Enter Your Password" />
+          <label class="text-white lg:text-color-2 font-semibold" for="full-name">Full Name</label>
+          <input
+            class="mt-[-12px] py-[14px] px-[13px] text-xs tracking-[.75px] rounded-[10px] border border-[#dedede] bg-[url(./assets/images/Profile.svg)] bg-no-repeat bg-[center_left_8px] pl-[40px]"
+            type="text"
+            id="full-name"
+            placeholder="Enter Your Full Name"
+          />
+          <label class="text-white lg:text-color-2 font-semibold" for="email">Email</label>
+          <input
+            class="mt-[-12px] py-[14px] px-[13px] text-xs tracking-[.75px] rounded-[10px] border border-[#dedede] bg-[url(./assets/images/mail-logo.svg)] bg-no-repeat bg-[center_left_13px] pl-[40px]"
+            type="text"
+            id="email"
+            placeholder="Enter Your Email"
+          />
+          <label class="text-white lg:text-color-2 font-semibold" for="password">Password</label>
+          <span class="eye-slash relative before:absolute before:bg-[url(./assets/images/EyeSlash.svg)] before:bg-no-repeat before:w-[16px] before:h-[16px] before:top-[6px] before:-right-[-20px] before:z-[1]">
+            <input
+              class="mt-[-12px] py-[14px] px-[13px] text-xs tracking-[.75px] rounded-[10px] border border-[#dedede] w-[100%] bg-[url(./assets/images/password-logo.svg)] bg-no-repeat bg-[center_left_13px] pl-[40px]"
+              type="password"
+              id="password"
+              placeholder="Enter Your Password"
+            />
           </span>
-          <label for="re-password">Confirm Password</label>
-          <span class="eye-slash">
-            <input type="password" class="password" id="re-password" placeholder="Enter Your Password" />
+          <label class="text-white lg:text-color-2 font-semibold" for="re-password">Confirm Password</label>
+          <span class="eye-slash relative before:absolute before:bg-[url(./assets/images/EyeSlash.svg)] before:bg-no-repeat before:w-[16px] before:h-[16px] before:top-[6px] before:-right-[-20px] before:z-[1]">
+            <input
+              class="mt-[-12px] py-[14px] px-[13px] text-xs tracking-[.75px] rounded-[10px] border border-[#dedede] w-[100%] bg-[url(./assets/images/password-logo.svg)] bg-no-repeat bg-[center_left_13px] pl-[40px]"
+              type="password"
+              id="re-password"
+              placeholder="Enter Your Password"
+            />
           </span>
-          <button class="register">Register</button>
+          <button type="button" class="register h-[50px] text-color-2 font-semibold bg-color-1 hover:bg-color-1-hover cursor-pointer rounded-[10px]">Register</button>
 
-          <p class="have-account">
+          <p class="have-account text-center text-white lg:text-black">
             Have An Account?
-            <a href="./login.html" class="login-link">Login</a>
+            <a href="./login.html" class="login-link text-color-1">Login</a>
           </p>
-          <p class="border">Or</p>
-          <section class="other-login">
-            <button class="facebook">Facebook</button>
-            <button class="google">Google</button>
+          <p
+            class="border-1 relative text-white lg:text-[#aaa] text-xs tracking-[.06px] text-center before:absolute before:w-[40%] before:h-[8px] before:left-[0px] before:border-b before:border-[#dedede] after:absolute after:w-[40%] after:h-[8px] after:right-[0px] after:border-b after:border-[#dedede]"
+          >
+            Or
+          </p>
+          <section class="other-login flex flex-col lg:flex-row gap-[14px]">
+            <button
+              type="button"
+              class="facebook h-[64px] w-[100%] lg:w-[31vw] bg-white pl-[3%] text-[#4f5665] text-lg font-medium tracking-[.09px] rounded-[15px] shadow-md shadow-black/25 cursor-pointer hover:bg-[#e8e8e8] bg-[url(./assets/images/facebook-logo.svg)] bg-no-repeat bg-[center_left_26%]"
+            >
+              Facebook
+            </button>
+            <button
+              type="button"
+              class="google h-[64px] w-[100%] lg:w-[31vw] bg-white pl-[3%] text-[#4f5665] text-lg font-medium tracking-[.09px] rounded-[15px] shadow-md shadow-black/25 cursor-pointer hover:bg-[#e8e8e8] bg-[url(./assets/images/google-logo.svg)] bg-no-repeat bg-[center_left_26%]"
+            >
+              Google
+            </button>
           </section>
         </section>
       </section>

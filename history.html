@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="coffee shop" />
+    <link rel="icon" href="./public/Vector.svg" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Coffee Shop - History</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500&family=Sacramento&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./checkout.css" />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              plusJakartaSans: "Plus Jakarta Sans, sans-serif",
+              sacramento: "Sacramento, cursive",
+            },
+            backgroundImage: {
+              "profile-pic-2": "url('./assets/images/profile-pic-2.webp')",
+            },
+            colors: {
+              "color-1": "#FF8906",
+              "color-1-hover": "#dd8500",
+              "color-2": "#0b132a",
+              "color-3": "#8e6447",
+            },
+          },
+        },
+      };
+
+      const toggleNavBar = () => {
+        let rightNav = document.querySelector(".right-nav");
+        let leftNav = document.querySelector(".left-nav");
+
+        rightNav.classList.toggle("nav-active");
+        leftNav.classList.toggle("nav-active");
+      };
+
+      const headDropDown = () => {
+        let dropItem = document.querySelector(".drop-down-item");
+
+        dropItem.classList.toggle("drop-active");
+      };
+    </script>
+  </head>
+
+  <body>
+    <header class="flex py-[2vh] px-[15px] items-center bg-black justify-between md:py-[2vh] md:px-[3vw] xl:px-[9vw]">
+      <section class="left-head flex md:flex md:gap-[3.5vw]">
+        <section class="coffee-logo flex gap-[15px] items-center">
+          <img class="select-none" src="./assets/images/coffee-logo-white.svg" alt="coffee-shop-logo" />
+          <h1 class="text-white text-xl font-sacramento select-none cursor-pointer text-xl font-normal">Coffee Shop</h1>
+        </section>
+        <nav class="left-nav items-center hidden md:flex md:gap-[3vw] text-sm font-medium">
+          <p class="text-white select-none cursor-pointer pb-2">Home</p>
+          <p class="active text-white select-none cursor-pointer pb-2 border-b border-color-1">Product</p>
+        </nav>
+      </section>
+      <img class="hamburger cursor-pointer md:hidden select-none" id="hamburger-menu" src="./assets/images/hamburger-menu.svg" alt="hamburger" onclick="toggleNavBar(); return false" />
+      <nav class="right-nav hidden md:flex md:items-center md:gap-[22px]">
+        <img class="w-[24px] h-[24px]" src="./assets/images/Search.svg" alt="search" />
+        <img class="w-[24px] h-[24px]" src="./assets/images/ShoppingCart -white.svg" alt="shopping-cart" />
+        <a href="#" class="md:hidden">
+          <p class="history text-white">History</p>
+        </a>
+        <a href="./profile.html" class="md:hidden">
+          <p class="profile text-white">Profile</p>
+        </a>
+        <div class="flex items-center gap-2">
+          <div class="profile-pic bg-profile-pic-2 w-[48px] h-[48px]"></div>
+          <div class="hidden md:block cursor-pointer"><img src="./assets/images/Arrow - Down Circle.svg" alt="drop-down" onclick="headDropDown(); return false" /></div>
+        </div>
+        <section class="drop-down-item text-white hidden">
+          <p class="history text-base">History</p>
+          <p class="profile text-base">Profile</p>
+          <button class="logout block text-base text-white bg-color-1 px-2 py-2 rounded-md w-[100%] hover:bg-color-1-hover" type="button">Log Out</button>
+        </section>
+        <button class="logout text-white bg-color-1 px-2 py-2 rounded-md w-[50vw] md:hidden hover:bg-color-1-hover" type="button">Log Out</button>
+      </nav>
+    </header>
+
+    <main class="flex flex-col items-center py-4 md:py-[5vh] px-[15px] md:items-start md:px-[3vw] xl:px-[9vw] xl:py-[8vh]">
+      <div class="flex items-center gap-[35px] mb-[38px]">
+        <h1 class="text-3xl md:text-5xl font-medium">History Order</h1>
+        <div class="w-[45px] bg-[#e8e8e8]"><p class="py-2.5 px-2.5 text-center">2</p></div>
+      </div>
+      <section class="flex flex-col lg:flex-row gap-[20px]">
+        <section class="flex flex-col gap-[12px]">
+          <section class="flex flex-col items-center gap-[10px] font-medium md:flex-row md:items-start mb-7 md: justify-between">
+            <div class="bg-[#f1f1f1] px-[10px] py-[10px] w-[90vw] md:w-max md:flex">
+              <p class="px-[10px] py-[10px] bg-white w-full md:w-max cursor-pointer select-none">On Progress</p>
+              <p class="px-[10px] py-[10px] w-full md:w-max cursor-pointer select-none">Sending Goods</p>
+              <p class="px-[10px] py-[10px] w-full md:w-max cursor-pointer select-none">Finish Order</p>
+            </div>
+            <div class="flex justify-between gap-10px bg-[#f1f1f1] px-[10px] py-[10px] items-center w-[90vw] md:w-fit">
+              <p class="w-max pl-[30px] px-[10px] py-[10px] before:bg-[url('./assets/images/Calendar.svg')] before:w-[24px] before:h-[24px] before:absolute before:top-[20%] before:left-0 relative">January 2023</p>
+              <div class="bg-[url('./assets/images/arrow-down-black.svg')] w-[24px] h-[24px]"></div>
+            </div>
+          </section>
+          <!--  -->
+          <section class="flex md:flex-col gap-[12px] justify-center">
+            <div class="flex flex-col md:flex-row gap-[25px] items-center bg-[#e8e8e8]/[0.3] p-[10px] pr-[20px] w-max">
+              <img src="./assets/images/history-product.webp" alt="product-image" />
+              <div>
+                <div class="flex gap-[8px] mb-[10px] justify-center md:justify-start">
+                  <img src="./assets/images/u_glass-tea.svg" alt="glass-tea" />
+                  <p class="text-[#4f5665] font-medium">No.order</p>
+                </div>
+                <p class="mb-[15px] text-color-2 font-bold">#12354-09893</p>
+                <p class="text-sm text-color-1 underline font-medium">Views Order Detail</p>
+              </div>
+              <div>
+                <div class="flex gap-[8px] mb-[10px] md:mt-[-20px] items-center justify-center md:justify-start">
+                  <img class="w-[16px] h-[16px]" src="./assets/images/Calendar.svg" alt="calendar" />
+                  <p class="text-[#4f5665] font-medium">Date</p>
+                </div>
+                <p class="mb-[15px] text-color-2 font-bold">23 January 2023</p>
+              </div>
+              <div>
+                <div class="flex gap-[8px] mb-[10px] md:mt-[-20px] items-center justify-center md:justify-start">
+                  <img class="w-[16px] h-[16px]" src="./assets/images/Repeat.svg" alt="repeat" />
+                  <p class="text-[#4f5665] font-medium">Total</p>
+                </div>
+                <p class="mb-[15px] text-color-2 font-bold">Idr 40.000</p>
+              </div>
+              <div>
+                <div class="flex gap-[8px] mb-[10px] md:mt-[-20px] items-center justify-center md:justify-start">
+                  <img class="w-[16px] h-[16px]" src="./assets/images/u_process.svg" alt="process" />
+                  <p class="text-[#4f5665] font-medium">Status</p>
+                </div>
+                <p class="mb-[15px] text-color-1 text-xs font-bold bg-[#ff8906]/[0.2] rounded-3xl px-[10px] py-[5px]">On Progress</p>
+              </div>
+            </div>
+            <!--  -->
+            <div class="flex flex-col md:flex-row gap-[25px] items-center bg-[#e8e8e8]/[0.3] p-[10px] pr-[20px] w-max">
+              <img src="./assets/images/history-product.webp" alt="product-image" />
+              <div>
+                <div class="flex gap-[8px] mb-[10px] justify-center md:justify-start">
+                  <img src="./assets/images/u_glass-tea.svg" alt="glass-tea" />
+                  <p class="text-[#4f5665] font-medium">No.order</p>
+                </div>
+                <p class="mb-[15px] text-color-2 font-bold">#12354-09893</p>
+                <p class="text-sm text-color-1 underline font-medium">Views Order Detail</p>
+              </div>
+              <div>
+                <div class="flex gap-[8px] mb-[10px] md:mt-[-20px] items-center justify-center md:justify-start">
+                  <img class="w-[16px] h-[16px]" src="./assets/images/Calendar.svg" alt="calendar" />
+                  <p class="text-[#4f5665] font-medium">Date</p>
+                </div>
+                <p class="mb-[15px] text-color-2 font-bold">23 January 2023</p>
+              </div>
+              <div>
+                <div class="flex gap-[8px] mb-[10px] md:mt-[-20px] items-center justify-center md:justify-start">
+                  <img class="w-[16px] h-[16px]" src="./assets/images/Repeat.svg" alt="repeat" />
+                  <p class="text-[#4f5665] font-medium">Total</p>
+                </div>
+                <p class="mb-[15px] text-color-2 font-bold">Idr 40.000</p>
+              </div>
+              <div>
+                <div class="flex gap-[8px] mb-[10px] md:mt-[-20px] items-center justify-center md:justify-start">
+                  <img class="w-[16px] h-[16px]" src="./assets/images/u_process.svg" alt="process" />
+                  <p class="text-[#4f5665] font-medium">Status</p>
+                </div>
+                <p class="mb-[15px] text-color-1 text-xs font-bold bg-[#ff8906]/[0.2] rounded-3xl px-[10px] py-[5px]">On Progress</p>
+              </div>
+            </div>
+            <!--  -->
+            <div class="hidden md:flex flex-col md:flex-row gap-[25px] items-center bg-[#e8e8e8]/[0.3] p-[10px] pr-[20px] w-max">
+              <img src="./assets/images/history-product.webp" alt="product-image" />
+              <div>
+                <div class="flex gap-[8px] mb-[10px] justify-center md:justify-start">
+                  <img src="./assets/images/u_glass-tea.svg" alt="glass-tea" />
+                  <p class="text-[#4f5665] font-medium">No.order</p>
+                </div>
+                <p class="mb-[15px] text-color-2 font-bold">#12354-09893</p>
+                <p class="text-sm text-color-1 underline font-medium">Views Order Detail</p>
+              </div>
+              <div>
+                <div class="flex gap-[8px] mb-[10px] md:mt-[-20px] items-center justify-center md:justify-start">
+                  <img class="w-[16px] h-[16px]" src="./assets/images/Calendar.svg" alt="calendar" />
+                  <p class="text-[#4f5665] font-medium">Date</p>
+                </div>
+                <p class="mb-[15px] text-color-2 font-bold">23 January 2023</p>
+              </div>
+              <div>
+                <div class="flex gap-[8px] mb-[10px] md:mt-[-20px] items-center justify-center md:justify-start">
+                  <img class="w-[16px] h-[16px]" src="./assets/images/Repeat.svg" alt="repeat" />
+                  <p class="text-[#4f5665] font-medium">Total</p>
+                </div>
+                <p class="mb-[15px] text-color-2 font-bold">Idr 40.000</p>
+              </div>
+              <div>
+                <div class="flex gap-[8px] mb-[10px] md:mt-[-20px] items-center justify-center md:justify-start">
+                  <img class="w-[16px] h-[16px]" src="./assets/images/u_process.svg" alt="process" />
+                  <p class="text-[#4f5665] font-medium">Status</p>
+                </div>
+                <p class="mb-[15px] text-color-1 text-xs font-bold bg-[#ff8906]/[0.2] rounded-3xl px-[10px] py-[5px]">On Progress</p>
+              </div>
+            </div>
+            <!--  -->
+            <div class="hidden md:flex flex-col md:flex-row gap-[25px] items-center bg-[#e8e8e8]/[0.3] p-[10px] pr-[20px] w-max">
+              <img src="./assets/images/history-product.webp" alt="product-image" />
+              <div>
+                <div class="flex gap-[8px] mb-[10px] justify-center md:justify-start">
+                  <img src="./assets/images/u_glass-tea.svg" alt="glass-tea" />
+                  <p class="text-[#4f5665] font-medium">No.order</p>
+                </div>
+                <p class="mb-[15px] text-color-2 font-bold">#12354-09893</p>
+                <p class="text-sm text-color-1 underline font-medium">Views Order Detail</p>
+              </div>
+              <div>
+                <div class="flex gap-[8px] mb-[10px] md:mt-[-20px] items-center justify-center md:justify-start">
+                  <img class="w-[16px] h-[16px]" src="./assets/images/Calendar.svg" alt="calendar" />
+                  <p class="text-[#4f5665] font-medium">Date</p>
+                </div>
+                <p class="mb-[15px] text-color-2 font-bold">23 January 2023</p>
+              </div>
+              <div>
+                <div class="flex gap-[8px] mb-[10px] md:mt-[-20px] items-center justify-center md:justify-start">
+                  <img class="w-[16px] h-[16px]" src="./assets/images/Repeat.svg" alt="repeat" />
+                  <p class="text-[#4f5665] font-medium">Total</p>
+                </div>
+                <p class="mb-[15px] text-color-2 font-bold">Idr 40.000</p>
+              </div>
+              <div>
+                <div class="flex gap-[8px] mb-[10px] md:mt-[-20px] items-center justify-center md:justify-start">
+                  <img class="w-[16px] h-[16px]" src="./assets/images/u_process.svg" alt="process" />
+                  <p class="text-[#4f5665] font-medium">Status</p>
+                </div>
+                <p class="mb-[15px] text-color-1 text-xs font-bold bg-[#ff8906]/[0.2] rounded-3xl px-[10px] py-[5px]">On Progress</p>
+              </div>
+            </div>
+          </section>
+          <section class="pages flex gap-[20px] mt-[30px] mb-[30px] mx-auto">
+            <div class="cursor-pointer select-none w-[40px] h-[40px] rounded-full flex items-center justify-center bg-color-1">
+              <p class="text-[#0b0909] font-medium">1</p>
+            </div>
+            <div class="cursor-pointer select-none w-[40px] h-[40px] rounded-full flex items-center justify-center bg-[#e8e8e8]">
+              <p class="text-[#a0a3bd] font-medium">2</p>
+            </div>
+            <div class="cursor-pointer select-none w-[40px] h-[40px] rounded-full flex items-center justify-center bg-[#e8e8e8]">
+              <p class="text-[#a0a3bd] font-medium">3</p>
+            </div>
+            <div class="cursor-pointer select-none w-[40px] h-[40px] rounded-full flex items-center justify-center bg-[#e8e8e8]">
+              <p class="text-[#a0a3bd] font-medium">4</p>
+            </div>
+            <div class="cursor-pointer select-none w-[40px] h-[40px] rounded-full flex items-center justify-center bg-color-1">
+              <img src="./assets/images/arrow-right-white.svg" alt="arrow-right" />
+            </div>
+          </section>
+        </section>
+        <div class="flex flex-col gap-[9px] p-[20px] border w-auto h-fit mb-[40px] 2xl:w-[30%]">
+          <img class="w-[48px] h-[48px]" src="./assets/images/message.svg" alt="" />
+          <p class="text-[#4f5665] text-lg font-bold">Send Us message</p>
+          <p class="text-[#4f5665]">if your unable to find answer or find your product quickly, please describe your problem and tell us. we will give you solution.</p>
+          <button type="button" class="bg-color-1 hover:bg-color-1-hover py-[10px] rounded-md text-[#0b132a] text-sm font-medium">Send Message</button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="py-[2vh] px-[15px] bg-[#f8f8f8] md:py-[2vh] md:px-[3vw] xl:px-[9vw]">
+      <section class="bio flex flex-col md:flex-row gap-[30px] lg:gap-[60px]">
+        <section class="footer-left flex flex-col gap-[24px] mt-[15px]">
+          <section class="coffee-logo flex gap-[15px] items-center">
+            <img class="coffee" src="./public/Vector.svg" alt="coffe.png" />
+            <p class="font-sacramento text-xl text-color-3">Coffee Shop</p>
+          </section>
+          <p class="bio-desc text-[#4f5665] mb-[8px]">
+            Coffee Shop is a store that sells some good <br />
+            meals, and especially coffee. We provide <br />
+            high quality beans
+          </p>
+          <p class="trademarks text-[#afb5c0]">©2020CoffeeStore</p>
+        </section>
+        <section class="footer-product flex flex-col gap-[10px]">
+          <p class="footer-title mb-[10px] text-color-2 text-lg font-medium">Product</p>
+          <p class="footer-desc text-[#4f5665]">Our Product</p>
+          <p class="footer-desc text-[#4f5665]">Pricing</p>
+          <p class="footer-desc text-[#4f5665]">Locations</p>
+          <p class="footer-desc text-[#4f5665]">Countries</p>
+          <p class="footer-desc text-[#4f5665]">Blog</p>
+        </section>
+        <section class="engage flex flex-col gap-[10px]">
+          <p class="footer-title mb-[10px] text-color-2 text-lg font-medium">Engage</p>
+          <p class="footer-desc text-[#4f5665]">Partner</p>
+          <p class="footer-desc text-[#4f5665]">FAQ</p>
+          <p class="footer-desc text-[#4f5665]">About Us</p>
+          <p class="footer-desc text-[#4f5665]">Privacy Policy</p>
+          <p class="footer-desc text-[#4f5665]">Terms of Service</p>
+        </section>
+        <section class="social-media flex flex-col gap-[10px]">
+          <p class="footer-title mb-[10px] text-color-2 text-lg font-medium">Social Media</p>
+          <div class="flex">
+            <img class="FB w-[60px] h-[60px] ml-[-13px]" src="./assets/images/Facebook.svg" alt="Facebook.svg" />
+            <img class="TWT w-[60px] h-[60px]" src="./assets/images/Twitter.svg" alt="Twitter.svg" />
+            <img class="IG w-[60px] h-[60px]" src="./assets/images/Instagram.svg" alt="Instagram.svg" />
+          </div>
+        </section>
+      </section>
+    </footer>
+  </body>
+</html>

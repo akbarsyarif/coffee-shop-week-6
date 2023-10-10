@@ -1,0 +1,58 @@
+* {
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.left-nav.nav-active {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  font-size: 20px;
+  position: absolute;
+  top: 7vh;
+  right: 0vw;
+  padding: 15px 15px 5px 15px;
+  width: 99vw;
+  height: 12vh;
+  background-color: black;
+  border-radius: 5px;
+  border-bottom: 1px dashed white;
+}
+
+nav.nav-active {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  font-size: 20px;
+  position: absolute;
+  top: 18.5vh;
+  padding: 15px 15px 15px 15px;
+  right: 0vw;
+  width: 99vw;
+  height: 80vh;
+  background-color: black;
+  border-radius: 5px;
+}
+
+.right-nav.nav-active {
+  border-top: 1px dashed white;
+  z-index: 0;
+}
+
+section.drop-active {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  font-size: 20px;
+  position: absolute;
+  top: 7.5vh;
+  padding: 20px;
+  right: 2px;
+  width: 20vw;
+  height: min-content;
+  background-color: black;
+  border-radius: 5px;
+  z-index: 1;
+}

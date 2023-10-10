@@ -5,96 +5,137 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="coffee shop" />
     <link rel="icon" href="./public/Vector.svg" />
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Coffee Shop - Profile</title>
-    <link rel="stylesheet" href="./profile.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500&family=Sacramento&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./product1.css" />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              plusJakartaSans: "Plus Jakarta Sans, sans-serif",
+              sacramento: "Sacramento, cursive",
+            },
+            backgroundImage: {
+              "profile-pic-2": "url('./assets/images/profile-pic-2.webp')",
+            },
+            colors: {
+              "color-1": "#FF8906",
+              "color-1-hover": "#dd8500",
+              "color-2": "#0b132a",
+              "color-3": "#8e6447",
+            },
+          },
+        },
+      };
+
+      const toggleNavBar = () => {
+        let rightNav = document.querySelector(".right-nav");
+        let leftNav = document.querySelector(".left-nav");
+
+        rightNav.classList.toggle("nav-active");
+        leftNav.classList.toggle("nav-active");
+      };
+    </script>
   </head>
 
   <body>
-    <header>
-      <section class="left-head">
-        <section class="coffee-logo">
-          <img src="./assets/images/coffee-logo-white.svg" alt="coffee-shop-logo" />
-          <h1>Coffee Shop</h1>
+    <header class="flex py-[2vh] px-[15px] items-center bg-black justify-between md:py-[2vh] md:px-[3vw] xl:px-[9vw]">
+      <section class="left-head flex md:flex md:gap-[3.5vw]">
+        <section class="coffee-logo flex gap-[15px] items-center">
+          <img class="select-none" src="./assets/images/coffee-logo-white.svg" alt="coffee-shop-logo" />
+          <h1 class="text-white text-xl font-sacramento select-none cursor-pointer text-xl font-normal">Coffee Shop</h1>
         </section>
-        <nav class="left-nav">
-          <p>Home</p>
-          <p class="active">Product</p>
+        <nav class="left-nav items-center hidden md:flex md:gap-[3vw] text-sm font-medium">
+          <p class="text-white select-none cursor-pointer pb-2">Home</p>
+          <p class="active text-white select-none cursor-pointer pb-2 border-b border-color-1">Product</p>
         </nav>
       </section>
-      <img class="hamburger" src="./assets/images/hamburger-menu.svg" alt="hamburger" />
-      <nav class="right-nav">
-        <img src="./assets/images/Search.svg" alt="seacrh" />
-        <img src="./assets/images/ShoppingCart -white.svg" alt="shopping-cart" />
-        <a href="./login.html">
-          <button class="signin">SignIn</button>
-        </a>
-        <button class="signup">Sign Up</button>
+      <img class="hamburger cursor-pointer md:hidden select-none" id="hamburger-menu" src="./assets/images/hamburger-menu.svg" alt="hamburger" onclick="toggleNavBar(); return false" />
+      <nav class="right-nav hidden md:flex md:items-center md:gap-[22px]">
+        <img class="w-[24px] h-[24px]" src="./assets/images/Search.svg" alt="search" />
+        <img class="w-[24px] h-[24px]" src="./assets/images/ShoppingCart -white.svg" alt="shopping-cart" />
+        <button type="button" class="text-sm text-white bg-transparent border border-white hover:bg-white/50 px-2 md:px-[18px] py-2 md:py-[12px] rounded-md w-[100%] hover:bg-color-1-hover">Sign In</button>
+        <button type="button" class="text-sm text-color-2 bg-color-1 border border-transparent px-2 md:px-[18px] py-2 md:py-[12px] rounded-md w-[100%] hover:bg-color-1-hover whitespace-nowrap">Sign Up</button>
       </nav>
     </header>
 
-    <main>
-      <h2 class="title">Profile</h2>
-      <section class="profile-cont">
-        <section class="profile-left">
-          <p class="name">Ghaluh Wizard</p>
-          <p class="email">ghaluhwizz@gmail.com</p>
+    <main class="px-[15px] md:px-[3vw] xl:px-[9vw] mt-[7.5vh] mb-[4vh]">
+      <h2 class="title text-color-2 text-[48px] font-medium text-center lg:text-start">Profile</h2>
+      <section class="profile-cont mt-[4vh] flex flex-col lg:flex-row gap-[20px]">
+        <section class="profile-left lg:w-[33%] h-fit py-[24px] px-[28px] flex flex-col items-center gap-[15px] border border-[#e8e8e8]">
+          <p class="name text-color-2 text-[22px] font-medium">Ghaluh Wizard</p>
+          <p class="email text-[#4f5665]">ghaluhwizz@gmail.com</p>
           <img src="./assets/images/profile-pic.png" alt="" />
-          <button class="upload-photo">Upload New Photo</button>
-          <p class="join-date">Since <span>20 January 2022</span></p>
+          <button class="upload-photo w-[100%] py-[12px] px-[18px] bg-color-1 hover:bg-color-1-hover cursor-pointer rounded-[5px] text-color-2 text-sm font-medium tracking-[.75px]">Upload New Photo</button>
+          <p class="join-date text-[#4f5665]">Since <span class="font-semibold">20 January 2022</span></p>
         </section>
-        <section class="profile-right">
-          <label for="full-name">Full Name</label>
-          <input type="text" id="full-name" value="Ghaluh Wizard" />
-          <label for="email">Email</label>
-          <input type="text" id="email" value="ghaluhwizz@gmail.com" />
-          <label for="phone">Phone</label>
-          <input type="number" id="phone" value="082116304338" />
-          <label class="password-label" for="password">Password</label>
-          <span class="eye-slash">
-            <input type="password" id="password" value="12345" />
+        <section class="profile-right pt-[23px] px-[50px] pb-[41px] flex flex-col gap-[25px] border border-[#e8e8e8] w-[100%]">
+          <label class="mb-[-12px] text-color-2 font-semibold" for="full-name">Full Name</label>
+          <input class="py-[14px] px-[13px] bg-[#fcfdfe] border border-[#dedede] rounded-[10px] bg-[url(./assets/images/Profile.svg)] bg-no-repeat bg-[center_left_13px] pl-[45px]" type="text" id="full-name" value="Ghaluh Wizard" />
+          <label class="mb-[-12px] text-color-2 font-semibold" for="email">Email</label>
+          <input class="py-[14px] px-[13px] bg-[#fcfdfe] border border-[#dedede] rounded-[10px] bg-[url(./assets/images/mail-logo.svg)] bg-no-repeat bg-[center_left_16px] pl-[45px]" type="text" id="email" value="ghaluhwizz@gmail.com" />
+          <label class="mb-[-12px] text-color-2 font-semibold" for="phone">Phone</label>
+          <input class="py-[14px] px-[13px] bg-[#fcfdfe] border border-[#dedede] rounded-[10px] bg-[url(./assets/images/PhoneCall.svg)] bg-no-repeat bg-[center_left_15px] pl-[45px]" type="number" id="phone" value="082116304338" />
+          <div class="flex justify-between">
+            <label class="password-label relative mb-[-12px] text-color-2 font-semibold" for="password">Password</label>
+            <p class="cursor-pointer text-color-1 hover:text-color-1-hover">Set New Password</p>
+          </div>
+          <span class="eye-slash relative before:absolute before:bg-[url(./assets/images/EyeSlash.svg)] before:bg-no-repeat before:w-[16px] before:h-[16px] before:top-[30%] before:right-[15px] before:z-[1]">
+            <input
+              class="w-[100%] py-[14px] px-[13px] bg-[#fcfdfe] border border-[#dedede] rounded-[10px] bg-[url(./assets/images/password-logo.svg)] bg-no-repeat bg-[center_left_16px] pl-[45px]"
+              type="password"
+              id="password"
+              value="12345"
+            />
           </span>
-          <label for="address">Address</label>
-          <input type="text" id="address" value="Griya Bandung Indah" />
-          <button>Submit</button>
+          <label class="mb-[-12px] text-color-2 font-semibold" for="address">Address</label>
+          <input class="py-[14px] px-[13px] bg-[#fcfdfe] border border-[#dedede] rounded-[10px] bg-[url(./assets/images/Location.svg)] bg-no-repeat bg-[center_left_15px] pl-[45px]" type="text" id="address" value="Griya Bandung Indah" />
+          <button type="button" class="py-[12px] px-[18px] bg-color-1 cursor-pointer hover:bg-color-1-hover rounded-[10px] text-color-2 text-sm font-medium tracking-[.75px]">Submit</button>
         </section>
       </section>
     </main>
 
-    <footer>
-      <section class="bio">
-        <section class="footer-left">
-          <section class="coffee-logo">
+    <footer class="py-[2vh] px-[15px] bg-[#f8f8f8] md:py-[2vh] md:px-[3vw] xl:px-[9vw]">
+      <section class="bio flex flex-col md:flex-row gap-[30px] lg:gap-[60px]">
+        <section class="footer-left flex flex-col gap-[24px] mt-[15px]">
+          <section class="coffee-logo flex gap-[15px] items-center">
             <img class="coffee" src="./public/Vector.svg" alt="coffe.png" />
-            <p>Coffee Shop</p>
+            <p class="font-sacramento text-xl text-color-3">Coffee Shop</p>
           </section>
-          <p class="bio-desc">
+          <p class="bio-desc text-[#4f5665] mb-[8px]">
             Coffee Shop is a store that sells some good <br />
             meals, and especially coffee. We provide <br />
             high quality beans
           </p>
-          <p class="trademarks">©2020CoffeeStore</p>
+          <p class="trademarks text-[#afb5c0]">©2020CoffeeStore</p>
         </section>
-        <section class="product">
-          <p class="footer-title">Product</p>
-          <p class="footer-desc">Our Product</p>
-          <p class="footer-desc">Pricing</p>
-          <p class="footer-desc">Locations</p>
-          <p class="footer-desc">Countries</p>
-          <p class="footer-desc">Blog</p>
+        <section class="footer-product flex flex-col gap-[10px]">
+          <p class="footer-title mb-[10px] text-color-2 text-lg font-medium">Product</p>
+          <p class="footer-desc text-[#4f5665]">Our Product</p>
+          <p class="footer-desc text-[#4f5665]">Pricing</p>
+          <p class="footer-desc text-[#4f5665]">Locations</p>
+          <p class="footer-desc text-[#4f5665]">Countries</p>
+          <p class="footer-desc text-[#4f5665]">Blog</p>
         </section>
-        <section class="engage">
-          <p class="footer-title">Engage</p>
-          <p class="footer-desc">Partner</p>
-          <p class="footer-desc">FAQ</p>
-          <p class="footer-desc">About Us</p>
-          <p class="footer-desc">Privacy Policy</p>
-          <p class="footer-desc">Terms of Service</p>
+        <section class="engage flex flex-col gap-[10px]">
+          <p class="footer-title mb-[10px] text-color-2 text-lg font-medium">Engage</p>
+          <p class="footer-desc text-[#4f5665]">Partner</p>
+          <p class="footer-desc text-[#4f5665]">FAQ</p>
+          <p class="footer-desc text-[#4f5665]">About Us</p>
+          <p class="footer-desc text-[#4f5665]">Privacy Policy</p>
+          <p class="footer-desc text-[#4f5665]">Terms of Service</p>
         </section>
-        <section class="social-media">
-          <p class="footer-title">Social Media</p>
-          <img class="FB" src="./assets/images/Facebook.svg" alt="Facebook.svg" />
-          <img class="TWT" src="./assets/images/Twitter.svg" alt="Twitter.svg" />
-          <img class="IG" src="./assets/images/Instagram.svg" alt="Instagram.svg" />
+        <section class="social-media flex flex-col gap-[10px]">
+          <p class="footer-title mb-[10px] text-color-2 text-lg font-medium">Social Media</p>
+          <div class="flex">
+            <img class="FB w-[60px] h-[60px] ml-[-13px]" src="./assets/images/Facebook.svg" alt="Facebook.svg" />
+            <img class="TWT w-[60px] h-[60px]" src="./assets/images/Twitter.svg" alt="Twitter.svg" />
+            <img class="IG w-[60px] h-[60px]" src="./assets/images/Instagram.svg" alt="Instagram.svg" />
+          </div>
         </section>
       </section>
     </footer>
