@@ -8,15 +8,6 @@ HTML, Tailwind, JavaScript
 
 ## You Can See The Page Through Here
 
-Home Page : https://coffeeshop-fwg16.netlify.app/
-Register page : https://coffeeshop-fwg16.netlify.app/register
-Login Page : https://coffeeshop-fwg16.netlify.app/login
-Product Page : https://coffeeshop-fwg16.netlify.app/Product
-Product Detail : https://coffeeshop-fwg16.netlify.app/product-detail
-Profile Page : https://coffeeshop-fwg16.netlify.app/profile
-Checkout Page : https://coffeeshop-fwg16.netlify.app/checkout
-History Page : https://coffeeshop-fwg16.netlify.app/history
-
 | Page Name      | Link                                                |
 | :------------- | :-------------------------------------------------- |
 | Home           | https://coffeeshop-fwg16.netlify.app/               |
