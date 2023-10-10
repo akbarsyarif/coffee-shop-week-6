@@ -41,18 +41,24 @@ nav.nav-active {
 }
 
 section.drop-active {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 15px;
-  font-size: 20px;
-  position: absolute;
-  top: 7.5vh;
-  padding: 20px;
-  right: 2px;
-  width: 20vw;
-  height: min-content;
-  background-color: black;
-  border-radius: 5px;
-  z-index: 1;
+  display: hidden;
+}
+
+@media screen and (min-width: 768px) {
+  section.drop-active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    font-size: 20px;
+    position: absolute;
+    top: 7.5vh;
+    padding: 20px;
+    right: 2px;
+    width: 20vw;
+    height: min-content;
+    background-color: black;
+    border-radius: 5px;
+    z-index: 1;
+  }
 }
