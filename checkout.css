@@ -12,7 +12,7 @@
   top: 7vh;
   right: 0vw;
   padding: 15px 15px 5px 15px;
-  width: 99vw;
+  width: 100vw;
   height: 12vh;
   background-color: black;
   border-radius: 5px;
@@ -29,7 +29,7 @@ nav.nav-active {
   top: 18.5vh;
   padding: 15px 15px 15px 15px;
   right: 0vw;
-  width: 99vw;
+  width: 100vw;
   height: 80vh;
   background-color: black;
   border-radius: 5px;
@@ -52,7 +52,7 @@ section.drop-active {
     gap: 15px;
     font-size: 20px;
     position: absolute;
-    top: 7.5vh;
+    top: 80px;
     padding: 20px;
     right: 2px;
     width: 20vw;
@@ -61,4 +61,26 @@ section.drop-active {
     border-radius: 5px;
     z-index: 1;
   }
+
+  .left-nav.nav-active {
+    flex-direction: row;
+    gap: 3vw;
+    position: static;
+    border: none;
+    width: auto;
+    height: max-content;
+  }
+
+  .right-nav.nav-active {
+    flex-direction: row;
+    align-items: center;
+    gap: 22px;
+    position: static;
+    border: none;
+    width: auto;
+    height: max-content;
+  }
+  /* left-nav items-center hidden md:flex md:gap-[3vw] text-sm font-medium
+
+  right-nav hidden md:flex md:items-center md:gap-[22px] */
 }
